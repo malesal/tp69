@@ -3,28 +3,28 @@
 using namespace std;
 
 string reemplazarEspacios(const string & cadena, char caracter);
+
 int main() {
     string cadena;
     char caracter;
 
     cout << "Ingresa una cadena de texto: ";
     getline(cin, cadena);
-
-    cout << "Ingresa el caracter de reemplazo: ";
+    cout << "Ingresa el caracter: ";
     cin >> caracter;
 
     string resultado = reemplazarEspacios(cadena, caracter);
     cout << "Resultado: " << resultado << endl;
-
+    
     return 0;
 }
+
 string reemplazarEspacios(const string & cadena, char caracter) {
     string nuevaCadena = cadena;
-    for (char & c : nuevaCadena) {
-        if (c == ' ') {
-            c = caracter;
+    for (size_t i = 0; i < nuevaCadena.length(); i++) {
+        if (nuevaCadena[i] == ' ') {
+            nuevaCadena[i] = caracter;
         }
     }
     return nuevaCadena;
 }
-
